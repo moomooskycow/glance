@@ -68,7 +68,7 @@ Closes #42
 3. **Test coverage** — What tests were added/modified.
 4. **Manual QA** — Steps to verify (build command, test command, expected output).
 
-**Review:** Cerberus AI review runs automatically on all PRs. Address council feedback.
+**Review:** No automated AI review gate — the Cerberus workflow was removed 2026-03-31 (commit `7715982`). Review PRs manually before merge.
 
 **Merge strategy:** Squash merge to master. Release automation triggers after tests pass.
 

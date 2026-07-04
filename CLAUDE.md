@@ -65,7 +65,7 @@ CI blocks merge on any failure. Local pre-commit hooks mirror CI.
 * **File permissions:** All output uses `0600`. Security boundary enforced by `ValidateFilePath` before every read.
 * **Prompt map ordering:** `FormatFileContents` iterates a Go map — non-deterministic order across runs.
 * **Single retry owner:** Only `FallbackClient` retries. `GeminiClient.Generate` and `Service` are single-attempt. Worst case: `(retriesPerTier+1) × len(tiers)` calls.
-* **Sentinel errors are mutable** — known bug tracked in issue #60; `WithCause()` modifies globals and should return a new error value instead.
+* **Sentinel errors are mutable** — confirmed live in `errors/errors.go`: `(*baseError).WithCause` mutates the receiver and returns it instead of a new value, so package-level sentinels (`ErrFileNotFound`, etc.) corrupt each other under concurrent `.WithCause()` calls. Originally tracked as issue #60; GitHub shows that issue CLOSED, but the closure was a 2026-03-28 bulk administrative sweep ("closing all GitHub Issues, backlog moved to file-driven `backlog.d/`"), not a fix — no `backlog.d/` entry exists for it either. Treat this as an open bug.
 * **Symlinks not resolved** in path validation — documented known gap.
 
 ## Environment

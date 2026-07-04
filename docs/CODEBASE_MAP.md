@@ -197,8 +197,9 @@ All are package-level function variables enabling test injection without constru
 | build.yml | push/PR to master | Cross-platform build (Ubuntu + macOS) |
 | precommit.yml | push/PR + weekly | Pre-commit hooks in CI |
 | release.yml | after tests pass on master | Semantic release via Landfall |
-| cerberus.yml | PR events | AI code review council |
 | performance.yml | weekly + manual | govulncheck performance benchmarks |
+
+`cerberus.yml` (AI code review council) was removed 2026-03-31 (commit `7715982`) and is no longer part of the pipeline.
 
 ## Conventions
 

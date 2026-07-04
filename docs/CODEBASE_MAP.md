@@ -199,7 +199,7 @@ All are package-level function variables enabling test injection without constru
 | release.yml | after tests pass on master | Semantic release via Landfall |
 | performance.yml | weekly + manual | govulncheck performance benchmarks |
 
-`cerberus.yml` (AI code review council) was removed 2026-03-31 (commit `7715982`) and is no longer part of the pipeline.
+`cerberus.yml` (AI code review council) was removed 2026-03-31 (commit `7715982`) and is no longer part of the pipeline. Note this table only covers repo-owned workflows in `.github/workflows/`: CodeRabbit still reviews every PR as a GitHub App-based check, separate from Cerberus and not represented by a file in this repo.
 
 ## Conventions
 

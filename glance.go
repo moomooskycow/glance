@@ -408,7 +408,7 @@ func processDirectory(dir string, forceDir bool, ignoreChain filesystem.IgnoreCh
 			r.err = fmt.Errorf("invalid glance.md path for %s: %w", dir, pathErr)
 			return r
 		}
-		// #nosec G306 -- Using filesystem.DefaultFileMode (0600) for security & path validated
+		// #nosec G306,G703 -- using 0600 and path returned by ValidateFilePath within dir
 		if werr := os.WriteFile(validatedPath, []byte(stub), filesystem.DefaultFileMode); werr != nil {
 			r.err = fmt.Errorf("failed writing stub glance.md to %s: %w", dir, werr)
 			return r
@@ -472,8 +472,8 @@ func processDirectory(dir string, forceDir bool, ignoreChain filesystem.IgnoreCh
 	}
 
 	// Write the generated content to file using the validated path
-	// #nosec G306 -- Using filesystem.DefaultFileMode (0600) for security & path validated
-	if werr := os.WriteFile(validatedPath, []byte(summary), filesystem.DefaultFileMode); werr != nil { // Path validated & using secure permissions
+	// #nosec G306,G703 -- using 0600 and path returned by ValidateFilePath within dir
+	if werr := os.WriteFile(validatedPath, []byte(summary), filesystem.DefaultFileMode); werr != nil {
 		logrus.WithFields(logrus.Fields{
 			"directory": dir,
 			"path":      validatedPath,

@@ -1,5 +1,15 @@
 # Glance README
 
+> **Status: maintenance-only.** The GLANCE mission — codebase comprehension via
+> generated summaries — has moved to [misty-step/glance](https://github.com/misty-step/glance),
+> a greenfield Rust rewrite. That repo owns new feature work going forward.
+> This repo (`phrazzld/glance`) stays up for reference and receives only
+> critical fixes (security, broken CI). The core architecture also changed:
+> the new tool generates a **sister repo** (`<name>-glance`, a version-controlled
+> mirror of HTML pages) per source repo instead of writing `.glance.md` files
+> in-repo — a deliberate move away from generated files living inside the
+> source tree. See `project.md` for the full disposition note.
+
 [![Pre-commit Checks](https://github.com/phrazzld/glance/actions/workflows/precommit.yml/badge.svg)](https://github.com/phrazzld/glance/actions/workflows/precommit.yml)
 [![Go Tests](https://github.com/phrazzld/glance/actions/workflows/test.yml/badge.svg)](https://github.com/phrazzld/glance/actions/workflows/test.yml)
 [![Go Linting](https://github.com/phrazzld/glance/actions/workflows/lint.yml/badge.svg)](https://github.com/phrazzld/glance/actions/workflows/lint.yml)

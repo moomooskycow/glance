@@ -68,7 +68,7 @@ Closes #42
 3. **Test coverage** — What tests were added/modified.
 4. **Manual QA** — Steps to verify (build command, test command, expected output).
 
-**Review:** Cerberus AI review runs automatically on all PRs. Address council feedback.
+**Review:** CodeRabbit (GitHub App, not a repo-owned workflow) reviews PRs automatically — address its feedback. The repo-owned Cerberus workflow (`.github/workflows/cerberus.yml`) was a separate, earlier review gate removed 2026-03-31 (commit `7715982`); do not resurrect it under the assumption no AI review is running today.
 
 **Merge strategy:** Squash merge to master. Release automation triggers after tests pass.
 

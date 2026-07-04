@@ -108,7 +108,7 @@ func FormatFileContents(fileMap map[string]string) string {
 
 	for _, filename := range keys {
 		content := fileMap[filename]
-		builder.WriteString(fmt.Sprintf("=== file: %s ===\n%s\n\n", filename, content))
+		fmt.Fprintf(&builder, "=== file: %s ===\n%s\n\n", filename, content)
 	}
 
 	return builder.String()

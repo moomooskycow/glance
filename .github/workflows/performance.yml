@@ -39,7 +39,7 @@ concurrency:
 jobs:
   performance-validation:
     name: Vulnerability Scan Performance Validation
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, hetzner-ci, glance-ci]
     timeout-minutes: 30
     strategy:
       fail-fast: false
@@ -161,7 +161,7 @@ jobs:
 
   benchmark-comparison:
     name: Performance Benchmark Comparison
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, hetzner-ci, glance-ci]
     timeout-minutes: 20
     if: ${{ github.event.inputs.test_mode == 'benchmark' || github.event_name == 'schedule' }}
 

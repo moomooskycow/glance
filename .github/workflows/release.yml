@@ -19,7 +19,7 @@ jobs:
     if: |
       (github.event_name == 'workflow_dispatch' && github.ref_name == 'master') ||
       (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, hetzner-ci, glance-ci]
     timeout-minutes: 15
     permissions:
       contents: write

@@ -23,7 +23,7 @@ concurrency:
 
 jobs:
   pre-commit:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, hetzner-ci, glance-ci]
     steps:
       - uses: actions/checkout@v4
 

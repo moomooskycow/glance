@@ -26,7 +26,7 @@ concurrency:
 jobs:
   golangci-lint:
     name: Run golangci-lint
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, hetzner-ci, glance-ci]
     timeout-minutes: 5
     steps:
       - name: Checkout code
@@ -52,7 +52,7 @@ jobs:
 
   additional-checks:
     name: Run additional static checks
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, hetzner-ci, glance-ci]
     timeout-minutes: 5
     steps:
       - name: Checkout code
@@ -89,7 +89,7 @@ jobs:
 
   vulnerability-scan:
     name: Block vulnerable dependencies
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, hetzner-ci, glance-ci]
     timeout-minutes: 5
     steps:
       - name: Checkout code
